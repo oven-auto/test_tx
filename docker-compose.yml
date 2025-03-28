@@ -86,7 +86,7 @@ services:
       - "DB_HOST=mysql"
       - "REDIS_PORT=6379"
       - "REDIS_HOST=redis"
-      - "POST_MAX_SIZE = 20M"
+      - "POST_MAX_SIZE=20M"
     tty: true
 
 
