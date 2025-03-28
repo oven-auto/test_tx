@@ -4,3 +4,7 @@ dump-base:
 
 migrate:
 	sudo docker exec php-fpm_test php artisan migrate
+
+migrate-rollback:
+	sudo docker exec php-fpm_test php artisan migrate:rollback
+
