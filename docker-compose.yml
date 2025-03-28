@@ -40,13 +40,13 @@ services:
         ipv4_address: 173.16.238.105
     environment:
       - MARIADB_ROOT_PASSWORD=admin
-      - MYSQL_DATABASE=test
+      - MYSQL_DATABASE=app
       - MYSQL_HOST=mysql
       - MYSQL_USER=app
       - MYSQL_PASSWORD=secret
       - MYSQL_PORT=3306
     ports:
-      - "33061:3306"
+      - "33062:3306"
 
 
   

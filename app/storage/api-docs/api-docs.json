@@ -1,0 +1,408 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Ну как бы апидока",
+        "description": "Апидока для тз",
+        "contact": {
+            "email": "wanokazak@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8380",
+            "description": "Demo API Server"
+        },
+        {
+            "url": ""
+        }
+    ],
+    "paths": {
+        "/api/auth/register": {
+            "post": {
+                "tags": [
+                    "Авторизация/Аутентификация"
+                ],
+                "summary": "Регистрация пользователя",
+                "operationId": "1e0ecb345f0451842b096cee264f2709",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuthRegisterRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "Авторизация/Аутентификация"
+                ],
+                "summary": "Логин пользователя",
+                "operationId": "2fdcb5e232530ac161d0ac61ce4f5002",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AuthLoginRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/auth/logout": {
+            "post": {
+                "tags": [
+                    "Авторизация/Аутентификация"
+                ],
+                "summary": "Выход пользователя",
+                "operationId": "b47853ec6315b54165137fe502a93412",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/bookings": {
+            "post": {
+                "tags": [
+                    "Бронирование"
+                ],
+                "summary": "Создать бронирование",
+                "operationId": "b058e52d2cc7ce0192cad8fbdb8a1411",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BookingCreateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/bookings/{bookingId}": {
+            "delete": {
+                "tags": [
+                    "Бронирование"
+                ],
+                "summary": "Удалить бронирование",
+                "operationId": "65a14a09639a071e6e6636cff95ce42b",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/resources/{resourceId}/bookings": {
+            "get": {
+                "tags": [
+                    "Бронирование"
+                ],
+                "summary": "Просмотреть все брони указаного ресурса",
+                "operationId": "999eef1e59b69b8feb8160ad934ac1db",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/resources": {
+            "get": {
+                "tags": [
+                    "Ресурсы"
+                ],
+                "summary": "Список ресурсов",
+                "operationId": "034f8ceb20cf48c53cc3dd78f8fc5ba2",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Ресурсы"
+                ],
+                "summary": "Создать ресурс",
+                "operationId": "f744004e72e900df7abdfa96bd162832",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ResourceCreateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/resourcetypes": {
+            "get": {
+                "tags": [
+                    "Типы ресурсов"
+                ],
+                "summary": "Список типов ресурсов",
+                "operationId": "6030d247a694a8726a0564415659a863",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Типы ресурсов"
+                ],
+                "summary": "Создать тип ресурса",
+                "operationId": "aa5c9c136556f98c7ad5b5eb5b77fe3b",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ResourceTypeCreateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        },
+        "/api/resourcetypes/{resourceTypeId}": {
+            "get": {
+                "tags": [
+                    "Типы ресурсов"
+                ],
+                "summary": "Открыть тип ресурса",
+                "operationId": "56a3786c632ec3a7599ba30426f474af",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Типы ресурсов"
+                ],
+                "summary": "Изменить тип ресурса",
+                "operationId": "1f1cfd745125e2361a23de25f8d8b123",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ResourceTypeCreateRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "BookingCreateRequest": {
+                "required": [
+                    "resource_id",
+                    "user_id",
+                    "start_time",
+                    "end_time"
+                ],
+                "properties": {
+                    "resource_id": {
+                        "description": "Идентификатор ресурса",
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    "user_id": {
+                        "description": "Идентификатор пользователя",
+                        "type": "integer",
+                        "format": "integer"
+                    },
+                    "start_time": {
+                        "description": "Начало бронирования",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "end_time": {
+                        "description": "Конец бронирования",
+                        "type": "string",
+                        "format": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ResourceCreateRequest": {
+                "required": [
+                    "name",
+                    "type"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "Название ресурса",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "description": {
+                        "description": "Описание ресурса",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "type": {
+                        "description": "Типа ресурса",
+                        "type": "string",
+                        "format": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ResourceTypeCreateRequest": {
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "Название типа ресурса",
+                        "type": "string",
+                        "format": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AuthLoginRequest": {
+                "required": [
+                    "email",
+                    "password"
+                ],
+                "properties": {
+                    "email": {
+                        "description": "Email пользователя",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "password": {
+                        "description": "Пароль пользователя",
+                        "type": "string",
+                        "format": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AuthRegisterRequest": {
+                "required": [
+                    "name",
+                    "email",
+                    "password"
+                ],
+                "properties": {
+                    "name": {
+                        "description": "Имя пользователя",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "email": {
+                        "description": "Email пользователя",
+                        "type": "string",
+                        "format": "string"
+                    },
+                    "password": {
+                        "description": "Пароль пользователя",
+                        "type": "string",
+                        "format": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Авторизация/Аутентификация",
+            "description": "Авторизация/Аутентификация"
+        },
+        {
+            "name": "Бронирование",
+            "description": "Бронирование"
+        },
+        {
+            "name": "Ресурсы",
+            "description": "Ресурсы"
+        },
+        {
+            "name": "Типы ресурсов",
+            "description": "Типы ресурсов"
+        }
+    ]
+}
